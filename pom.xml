@@ -7,6 +7,10 @@
 	<name>Tmar sample</name>
 	<description>Tmar sample project</description>
 
+  <properties>
+    <groovy.version>2.1.5</groovy.version>
+  </properties>
+  
 	<repositories>
 		<repository>
 			<id>jspresso-repository</id>
@@ -19,17 +23,5 @@
 			<artifactId>jspresso-tmar</artifactId>
 			<version>1.2-SNAPSHOT</version>
 		</dependency>
-
-		<dependency>
-			<groupId>org.codehaus.groovy</groupId>
-			<artifactId>groovy</artifactId>
-			<version>2.1.5</version>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.groovy</groupId>
-			<artifactId>groovy-all</artifactId>
-			<version>2.1.5</version>
-		</dependency>
-
 	</dependencies>
 </project>
