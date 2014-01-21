@@ -1,0 +1,26 @@
+Algorithm for map - get
+
+A map should be an object that maps keys to values. 
+ /image map-image.jpg
+ /image tmar.jpg
+ 
+Let's consider this map :
+   /table sample 1 
+  [ key | value |
+  | A   | 10    |
+  | B   | 20    |
+  | C   | 30    |
+  | D   | 30    |
+ 
+  This operation returns the value to which the specified key is mapped, 
+  or null if this map contains no mapping for the key. 
+
+  Here are few examples; for each line bellow let's "get" the value for the sample
+  map above, and check the expected value :
+     /each 
+   [ key | expected value ? | Note                       
+   | A   | 10               | This value exists          
+   | B   | 20               | This value exists          
+   | X   | null             | This value does not exists 
+  
+   For more details about "null" value, see the put operation test case.

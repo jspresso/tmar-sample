@@ -1,0 +1,70 @@
+Algorithm for map - put
+
+A map should be an object that maps keys to values. 
+ /image map-image.jpg
+ 
+  The "put" operation returns the specified value with the specified key in this map (optional operation). 
+  If the map previously contained a mapping for the key, the old value is replaced by the specified value. 
+  
+  Let's consider an empty map; here is a sequence of operation and the expected results :
+  
+  /sequence
+  [ size ? | comments             
+  | 0      | The map is empty     
+ 
+   Let's put somes values :
+   /sequence
+  [ operation | key | value | size ? | comments                     
+  | put       | A   | aaa   | 1      | Put one value, size is 1     
+  | put       | B   | bbb   | 2      | Put another value, size is 2 
+  | put       | C   | ccc   | 3      | Put a third value, size is 3 
+   
+   Let's get some values from this map :  
+   /sequence
+  [ operation | key | expected value ? | comments                                               
+  | get       | A   | aaa              | Get an existant key                                    
+  | get       | X   | null             | Try to get a non existant key, it should return "null" 
+   
+ 
+ _Overwriting an existant value
+ 
+  Now it's important to check what happen if we put a key that already exists : 
+  
+   /inline 
+   If we do [ operation ] put | for [ key ] A | and if we set  [ value ] xxx | 
+   then the map size should still be [ size ? ] 3 | 
+   
+   /inline 
+   And if we now try to do [ operation ] get |  for key [ key ] A | then we are expecting that
+   the corresponding value is no more "aaa" but "xxx" :
+  [ expected value ? ] xxx |    
+  
+    
+_Managing the "null" value
+
+  The null value is allowed for map key as well for map value. 
+  
+  First of all, let's use the value size and the get operation to check that the null value is present :
+   
+    /sequence  
+  [ operation | key | value | size ? | comments                                                              
+  | put       | X   | null  | 4      | The size confirmes that ther is one more value in the map             
+
+   /sequence 
+  [ operation | key | expected value ? | comments                                                              |
+  | get       | X   | null             | The get operation returns null but it doesn't mean A doesn't exists ! |
+  | contains  | X   | true             | This other operation is helpfull to distinguish null values           |
+    
+  Now, let's use null as key :
+  
+     /sequence  
+  [ operation | key  | value | size ? | comments                                                              
+  | put       | null | 99    | 5      | The size confirmes that ther is one more value in the map             
+
+   /sequence 
+  [ operation | key  | expected value ? | comments                                                                                  |
+  | get       | null | 99               | The get operation found the null item                                                   ! |
+  | contains  | null | true             | This "contains" operation is working also                                                 |
+     
+    
+    

@@ -1,0 +1,50 @@
+Issue lifecycle 
+
+_Purpose
+An issue tracking system is a computer software package that manages and maintains lists of issues, as needed by 
+an organization. An issue tracking system often also contains a knowledge base containing information on each 
+customer, resolutions to common problems, and other such data. 
+
+_Ticket
+A ticket element, within an issue tracking system, is a running report on a particular problem, its status, and other 
+relevant data. A ticket element, within an issue tracking system, is a running report on a particular problem, its status, 
+and other relevant data.
+
+_Workflow
+An example scenario is presented to demonstrate how a common issue tracking system would work:
+ * A customer service technician receives a telephone call  (i.e NEW issue) from a customer about a problem. 
+ * The technician creates the issue in the system entering all relevant data  (i.e the issue is ACKNOWLEDGED)
+ * As work is done on that issue, the system is updated with new data by the technician (i.e ASSIGNED). 
+ * After the issue has been fully addressed, it is marked as RESOLVED in the tracking system.
+ * If the problem is not fully resolved, the ticket will be reopened (i.e FEEDBACK) once the technician receives 
+  new information from the customer. 
+ * Few days after a ticket was marked as resolved, the status will be CLOSED.
+
+Here is a description of all possible status and transitions :
+/image issue-tracking.png
+
+_Transitions 
+The issue tracking system should allow only transitions bellow :
+/each 
+[ state        | acknowledged? | confirmed? | assigned? | frozen? | resolved? | feedback? | closed? |
+| new          | true          | true       | true      | no      | no        | no        | no      |
+| acknowledged | no            | true       | true      | no      | no        | no        | no      |
+| confirmed    | no            | no         | true      | no      | no        | no        | no      |
+| assigned     | no            | true       | no        | true    | true      | true      | no      |
+| frozen       | no            | no         | true      | no      | no        | no        | no      |
+| resolved     | no            | no         | no        | no      | no        | true      | true    |
+| feedback     | no            | no         | true      | no      | no        | no        | no      |
+| closed       | no            | no         | no        | no      | false     | true      | no      |
+
+The should be no transition from any transition to the "new" status :
+
+[ state        | new? |
+| acknowledged | no   |
+| confirmed    | no   |
+| assigned     | no   |
+| frozen       | no   |
+| resolved     | no   |
+| feedback     | no   |
+| closed       | no   |
+ 
+
