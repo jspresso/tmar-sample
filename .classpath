@@ -33,5 +33,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry exported="true" kind="con" path="GROOVY_DSL_SUPPORT"/>
+	<classpathentry kind="src" output="target/test-classes" path="target/tmar-suite"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
