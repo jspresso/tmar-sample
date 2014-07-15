@@ -20,7 +20,7 @@
 		<dependency>
 			<groupId>org.jspresso.contrib</groupId>
 			<artifactId>jspresso-tmar</artifactId>
-			<version>1.4-SNAPSHOT</version>
+			<version>1.5</version>
 		</dependency>
 		<dependency>
 			<groupId>org.spockframework</groupId>
@@ -28,4 +28,5 @@
 			<version>0.7-groovy-2.0</version>
 		</dependency>
 	</dependencies>
+	
 </project>
