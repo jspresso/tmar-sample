@@ -1,7 +1,0 @@
-Exemple du matin
-
- /table employee
- [ company    | company.workforce | name     | first name | gender | birth date | contact.address | contact.city | contact.phone |
- | Design2See |                   | Berlutti | Graziella  | Femme  | 1971/01/17 | xxx             |              |               |
- 
-
