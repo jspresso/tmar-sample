@@ -2,7 +2,6 @@ Algorithm for map - get
 
 A map should be an object that maps keys to values. 
  /image map-image.jpg
- /image tmar.jpg
  
 Let's consider this map :
    /table sample 1 
