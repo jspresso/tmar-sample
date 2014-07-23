@@ -7,8 +7,9 @@
 	<name>Tmar sample</name>
 	<description>Tmar sample project</description>
 
-	<!-- If necessary force the groovy version to use <properties> <groovy.version>2.1.5</groovy.version> 
-		</properties> -->
+	<!-- If necessary force the groovy version to use <properties> 
+	  <groovy.version>2.1.5</groovy.version> 
+	</properties> -->
 
 	<repositories>
 		<repository>
@@ -16,17 +17,31 @@
 			<url>http://repository.jspresso.org/maven2</url>
 		</repository>
 	</repositories>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.jspresso.contrib</groupId>
+				<artifactId>jspresso-tmar-parent</artifactId>
+				<type>pom</type>
+				<scope>import</scope>
+				<version>1.5</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement> 
+
 	<dependencies>
+
 		<dependency>
 			<groupId>org.jspresso.contrib</groupId>
 			<artifactId>jspresso-tmar</artifactId>
-			<version>1.5</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.spockframework</groupId>
 			<artifactId>spock-core</artifactId>
-			<version>0.7-groovy-2.0</version>
 		</dependency>
+
 	</dependencies>
-	
+
 </project>
