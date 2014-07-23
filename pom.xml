@@ -28,7 +28,7 @@
 				<version>1.5</version>
 			</dependency>
 		</dependencies>
-	</dependencyManagement> 
+	</dependencyManagement>
 
 	<dependencies>
 
@@ -40,6 +40,16 @@
 		<dependency>
 			<groupId>org.spockframework</groupId>
 			<artifactId>spock-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
 		</dependency>
 
 	</dependencies>
