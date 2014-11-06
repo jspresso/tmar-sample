@@ -7,9 +7,8 @@
 	<name>Tmar sample</name>
 	<description>Tmar sample project</description>
 
-	<!-- If necessary force the groovy version to use <properties> 
-	  <groovy.version>2.1.5</groovy.version> 
-	</properties> -->
+	<!-- If necessary force the groovy version to use <properties> <groovy.version>2.1.5</groovy.version> 
+		</properties> -->
 
 	<repositories>
 		<repository>
@@ -50,6 +49,21 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
 		</dependency>
 
 	</dependencies>
