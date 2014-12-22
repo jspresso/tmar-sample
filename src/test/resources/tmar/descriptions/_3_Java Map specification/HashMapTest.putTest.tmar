@@ -29,16 +29,17 @@ A map should be an object that maps keys to values.
  _Overwriting an existant value
  
   Now it's important to check what happen if we put a key that already exists : 
-  
-   /inline 
-   If we do [ operation ] put | for [ key ] A | and if we set  [ value ] xxx | 
-   then the map size should still be [ size ? ] 3 | 
    
+   [ operation | key | value | size ? 
+   /inline  
+   If we do [ put ] for [ A ] and if we set  [ xxx ]  then the map size should still be [ 3 ] 
+   /endInline 
+   
+   [ operation | key | expected value ? 
    /inline 
-   And if we now try to do [ operation ] get |  for key [ key ] A | then we are expecting that
-   the corresponding value is no more "aaa" but "xxx" :
-  [ expected value ? ] xxx |    
-  
+   And if we now try to do [ get ]  key [ A ] then we are expecting that  the corresponding 
+   value is no more "aaa" but [ xxx ]    
+   /endInline 
     
 _Managing the "null" value
 
