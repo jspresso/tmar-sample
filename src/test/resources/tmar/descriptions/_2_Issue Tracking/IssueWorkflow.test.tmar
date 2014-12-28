@@ -5,6 +5,7 @@ An issue tracking system is a computer software package that manages and maintai
 an organization. An issue tracking system often also contains a knowledge base containing information on each 
 customer, resolutions to common problems, and other such data. 
 
+/hide 
 _Ticket
 A ticket element, within an issue tracking system, is a running report on a particular problem, its status, and other 
 relevant data. A ticket element, within an issue tracking system, is a running report on a particular problem, its status, 
@@ -19,6 +20,7 @@ An example scenario is presented to demonstrate how a common issue tracking syst
  * If the problem is not fully resolved, the ticket will be reopened (i.e FEEDBACK) once the technician receives 
   new information from the customer. 
  * Few days after a ticket was marked as resolved, the status will be CLOSED.
+/endHide 
 
 Here is a description of all possible status and transitions :
 /image issue-tracking.png
