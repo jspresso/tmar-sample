@@ -1,8 +1,8 @@
 Issue lifecycle 
 
-_Purpose
-An issue tracking system is a computer software package that manages and maintains lists of issues, as needed by 
-an organization. An issue tracking system often also contains a knowledge base containing information on each 
+#Purpose
+An **issue tracking system** is a computer software package that manages and maintains lists of **issues**, as needed by 
+an organization. An *issue tracking system* often also contains a knowledge base containing information on each 
 customer, resolutions to common problems, and other such data. 
 
 /hide 
@@ -22,11 +22,11 @@ An example scenario is presented to demonstrate how a common issue tracking syst
  * Few days after a ticket was marked as resolved, the status will be CLOSED.
 /endHide 
 
-Here is a description of all possible status and transitions :
+Here is a description of all possible *statuses* and *transitions* :
 /image issue-tracking.png
 
-_Transitions 
-The issue tracking system should allow only transitions bellow :
+#Transitions 
+The issue tracking system should allow *only* transitions bellow :
 /each 
 [ state        | acknowledged? | confirmed? | assigned? | frozen? | resolved? | feedback? | closed? |
 | new          | true          | true       | true      | no      | no        | no        | no      |
