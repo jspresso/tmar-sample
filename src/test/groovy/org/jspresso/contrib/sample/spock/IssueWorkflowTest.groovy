@@ -16,14 +16,15 @@ class IssueWorkflowTest extends Tmar {
     EState state = tmar.state.toUpperCase();
 
     // Prepare assertions
-    tmar.new = Issue.isAllowed(state, EState.NEW)
-    tmar.acknowledged = Issue.isAllowed(state, EState.ACKNOWLEDGED)
-    tmar.confirmed = Issue.isAllowed(state, EState.CONFIRMED)
-    tmar.assigned = Issue.isAllowed(state, EState.ASSIGNED)
-    tmar.frozen = Issue.isAllowed(state, EState.FROZEN)
-    tmar.resolved = Issue.isAllowed(state, EState.RESOLVED)
-    tmar.feedback = Issue.isAllowed(state, EState.FEEDBACK)
-    tmar.closed = Issue.isAllowed(state, EState.CLOSED)
+    Issue issue = new Issue()
+    tmar.new = issue.isAllowed(state, EState.NEW)
+    tmar.acknowledged = issue.isAllowed(state, EState.ACKNOWLEDGED)
+    tmar.confirmed = issue.isAllowed(state, EState.CONFIRMED)
+    tmar.assigned = issue.isAllowed(state, EState.ASSIGNED)
+    tmar.frozen = issue.isAllowed(state, EState.FROZEN)
+    tmar.resolved = issue.isAllowed(state, EState.RESOLVED)
+    tmar.feedback = issue.isAllowed(state, EState.FEEDBACK)
+    tmar.closed = issue.isAllowed(state, EState.CLOSED)
 
     then:
     tmar.asserts()

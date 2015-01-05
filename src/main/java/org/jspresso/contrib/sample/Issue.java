@@ -17,7 +17,7 @@ public class Issue {
     this.state = newState;
   }
    
-  public static boolean isAllowed(EState state, EState newState) {
+  public boolean isAllowed(EState state, EState newState) {
     switch (state) {
     case NEW:
       return contains(newState, EState.ACKNOWLEDGED, EState.CONFIRMED, EState.ASSIGNED);
