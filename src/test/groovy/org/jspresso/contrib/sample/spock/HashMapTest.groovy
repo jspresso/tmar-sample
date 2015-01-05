@@ -1,10 +1,11 @@
 package org.jspresso.contrib.sample.spock
 
 import java.util.Map
+
 import org.jspresso.contrib.tmar.core.Tmar
+import org.junit.Test;
 
 class HashMapTest extends Tmar {
-
 
 	def getTest() {
 
@@ -29,8 +30,8 @@ class HashMapTest extends Tmar {
 		tmar << getData('getTest')
 	}
 
-
-
+  
+  
 	def putTest() {
 
 		when:

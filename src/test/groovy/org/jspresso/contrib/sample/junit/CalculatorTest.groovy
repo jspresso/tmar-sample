@@ -1,13 +1,14 @@
 package org.jspresso.contrib.sample.junit
 
 import org.jspresso.contrib.tmar.core.Tmar4JUnit;
+import org.junit.Assert;
 import org.junit.Test
 
 
 /**
  * Created by pmb on 29/03/2014.
  */
-class CalculatorTest extends Tmar4JUnit {
+public class CalculatorTest extends Tmar4JUnit {
   
   @Test
   void addition() {

@@ -17,11 +17,9 @@
 		</layout>
 	</appender>
 
-	<!-- 
-	<category name="com.xxx">
-		<priority value="error" />
+	<category name="org.jspresso.contrib.tmar.report.TmarReport">
+		<priority value="info" />
 	</category>
-	 -->
 	 
 	<root>
 		<priority value="debug" />

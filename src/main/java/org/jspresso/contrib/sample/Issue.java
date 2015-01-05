@@ -7,7 +7,7 @@ public class Issue {
   public static enum EState { NEW, ACKNOWLEDGED, CONFIRMED, ASSIGNED, FROZEN, RESOLVED, FEEDBACK, CLOSED }
   
   private EState state;
-  
+   
   public Issue() {
     state = EState.NEW;
   }

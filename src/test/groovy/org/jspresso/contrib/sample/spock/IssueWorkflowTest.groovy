@@ -3,11 +3,14 @@ package org.jspresso.contrib.sample.spock
 import org.jspresso.contrib.sample.Issue
 import org.jspresso.contrib.sample.Issue.EState
 import org.jspresso.contrib.tmar.core.Tmar
+import org.junit.Assert;
+import org.junit.Test;
 
-class IssueWorkflow extends Tmar {
+class IssueWorkflowTest extends Tmar {
 
+  @Test
   def test() {
-
+ 
     when:
     // Manage your test case
     EState state = tmar.state.toUpperCase();
@@ -28,4 +31,5 @@ class IssueWorkflow extends Tmar {
     where:
     tmar << getData('test')
   }
+
 }
