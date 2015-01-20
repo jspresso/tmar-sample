@@ -11,6 +11,7 @@ and other relevant data. A ticket element, within an issue tracking system, is a
 its status, and other relevant data.
 
 ###Workflow
+/hide 
 An example scenario is presented to demonstrate how a common *issue tracking system* would work:
  * A customer service technician receives a telephone call  (i.e NEW issue) from a customer about a problem.
  * The technician creates the issue in the system entering all relevant data  (i.e the issue is **ACKNOWLEDGED**)
@@ -21,10 +22,8 @@ An example scenario is presented to demonstrate how a common *issue tracking sys
  * Few days after a ticket was marked as resolved, the status will be **CLOSE**.
 /endHide 
 
-/hide status and transition schema
 Here is a description of all possible *statuses* and *transitions* :
 #image issue-tracking.png
-/endHide
 
 ###Transitions
 
@@ -40,7 +39,7 @@ _The issue tracking system should allow only transitions bellow :
 | feedback     | no            | no         | true      | no      | no        | no        | no      |
 | closed       | no            | no         | no        | no      | false     | true      | no      |
 
-_The should be no transition from any transition to the "new" status :
+_There should be no transition from any transition to the "new" status :
 
 [ state        | new? |
 | acknowledged | no   |
