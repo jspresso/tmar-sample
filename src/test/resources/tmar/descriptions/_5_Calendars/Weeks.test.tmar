@@ -1,0 +1,37 @@
+Weeks
+
+First day of week is **Sunday** :
+/map days
+[ index | name      |
+| 1     | Sunday    |
+| 2     | Monday    |
+| 3     | Tuesday   |
+| 4     | Wednesday |
+| 5     | Thursday  |
+| 6     | Friday    |
+| 7     | Saturday  |
+
+The minimal days for week one is **one day**
+
+/each
+[ date       | week ? | day of week ? |
+| 2015/01/15 | 3      | Thursday      |
+| 2015/01/28 | 5      | Wednesday     |
+| 2015/02/27 | 9      | Friday        |
+| 2015/03/29 | 14     | Sunday        |
+| 2015/04/28 | 18     | Tuesday       |
+| 2015/05/28 | 22     | Thursday      |
+| 2015/06/27 | 26     | Saturday      |
+| 2015/07/27 | 31     | Monday        |
+| 2015/08/26 | 35     | Wednesday     |
+| 2015/09/25 | 39     | Friday        |
+| 2015/10/25 | 44     | Sunday        |
+| 2015/11/24 | 48     | Tuesday       |
+| 2015/12/24 | 52     | Thursday      |
+| 2016/01/23 | 4      | Saturday      |
+| 2016/02/22 | 9      | Monday        |
+| 2016/03/23 | 13     | Wednesday     |
+
+_NB:
+* First day of week is **Sunday**
+* Minimal days for week one is **one day**
