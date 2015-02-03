@@ -1,19 +1,19 @@
 Issue lifecycle 
 
-###Purpose
-An **issue tracking system** is a computer software package that manages and maintains lists of **issues**, as needed
-by an organization. An *issue tracking system* often also contains a knowledge base containing information on each
+#Purpose
+An **issue tracking system** is a computer software package that manages and maintains lists of **issues**, as needed by 
+an organization. An *issue tracking system* often also contains a knowledge base containing information on each 
 customer, resolutions to common problems, and other such data. 
 
-###Ticket
-A **ticket** element, within an issue tracking system, is a running report on a particular problem, its **status**,
-and other relevant data. A ticket element, within an issue tracking system, is a running report on a particular problem,
-its status, and other relevant data.
-
-###Workflow
 /hide 
+#Ticket
+A **ticket** element, within an issue tracking system, is a running report on a particular problem, its **status**, and other 
+relevant data. A ticket element, within an issue tracking system, is a running report on a particular problem, its status, 
+and other relevant data.
+
+#Workflow
 An example scenario is presented to demonstrate how a common *issue tracking system* would work:
- * A customer service technician receives a telephone call  (i.e NEW issue) from a customer about a problem.
+ * A customer service technician receives a telephone call  (i.e **NEW** issue) from a customer about a problem. 
  * The technician creates the issue in the system entering all relevant data  (i.e the issue is **ACKNOWLEDGED**)
  * As work is done on that issue, the system is updated with new data by the technician (i.e **ASSIGNED**). 
  * After the issue has been fully addressed, it is marked as **RESOLVED** in the tracking system.
@@ -23,11 +23,10 @@ An example scenario is presented to demonstrate how a common *issue tracking sys
 /endHide 
 
 Here is a description of all possible *statuses* and *transitions* :
-#image issue-tracking.png
+/image issue-tracking.png
 
-###Transitions
-
-_The issue tracking system should allow only transitions bellow :
+#Transitions 
+The issue tracking system should allow *only* transitions bellow :
 /each 
 [ state        | acknowledged? | confirmed? | assigned? | frozen? | resolved? | feedback? | closed? |
 | new          | true          | true       | true      | no      | no        | no        | no      |
@@ -39,7 +38,7 @@ _The issue tracking system should allow only transitions bellow :
 | feedback     | no            | no         | true      | no      | no        | no        | no      |
 | closed       | no            | no         | no        | no      | false     | true      | no      |
 
-_There should be no transition from any transition to the "new" status :
+The should be no transition from any transition to the "new" status :
 
 [ state        | new? |
 | acknowledged | no   |

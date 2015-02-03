@@ -7,8 +7,11 @@
   <name>Tmar sample</name>
   <description>Tmar sample project</description>
 
-  <!-- If necessary force the groovy version to use <properties> <groovy.version>2.1.5</groovy.version> 
-    </properties> -->
+  <!-- If necessary force the groovy version to use 
+  <properties> 
+      <groovy.version>2.1.5</groovy.version> 
+  </properties> 
+  -->
 
   <repositories>
     <repository>
@@ -18,15 +21,12 @@
   </repositories>
 
   <properties>
-    <tmar.version>1.6-SNAPSHOT</tmar.version>
     <groovy-eclipse-batch.version>2.0.7-03</groovy-eclipse-batch.version>
     <groovy-eclipse-compiler.version>2.7.0-01</groovy-eclipse-compiler.version>
     <groovy.version>2.0.7</groovy.version>
     <java.version>1.7</java.version>
-    <surefire-plugin.version>2.17</surefire-plugin.version>
-    <junit.version>1.2.17</junit.version>
   </properties>
- 
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -34,7 +34,7 @@
         <artifactId>jspresso-tmar-parent</artifactId>
         <type>pom</type>
         <scope>import</scope>
-        <version>${tmar.version}</version>
+        <version>1.6-SNAPSHOT</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -64,14 +64,13 @@
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
-      <version>${junit.version}</version>
+      <version>1.2.17</version>
     </dependency>
 
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
@@ -80,41 +79,51 @@
   </dependencies>
 
   <build>
+  
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <source>${java.version}</source>
+            <target>${java.version}</target>
+            <encoding>UTF-8</encoding>
+            <compilerId>groovy-eclipse-compiler</compilerId>
+            <verbose>false</verbose>
+          </configuration>
+          <dependencies>
+            <dependency>
+              <groupId>org.codehaus.groovy</groupId>
+              <artifactId>groovy-eclipse-compiler</artifactId>
+              <version>${groovy-eclipse-compiler.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>org.codehaus.groovy</groupId>
+              <artifactId>groovy-eclipse-batch</artifactId>
+              <version>${groovy-eclipse-batch.version}</version>
+            </dependency>
+          </dependencies>
+        </plugin>
+        
+        <plugin>
+          <groupId>org.codehaus.groovy</groupId>
+          <artifactId>groovy-eclipse-compiler</artifactId>
+          <version>${groovy-eclipse-compiler.version}</version>
+        </plugin>
+        
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.17</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  
     <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>${java.version}</source>
-          <target>${java.version}</target>
-          <encoding>UTF-8</encoding>
-          <compilerId>groovy-eclipse-compiler</compilerId>
-          <verbose>false</verbose>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-eclipse-compiler</artifactId>
-            <version>${groovy-eclipse-compiler.version}</version>
-          </dependency>
-          <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-eclipse-batch</artifactId>
-            <version>${groovy-eclipse-batch.version}</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-
       <plugin>
         <groupId>org.codehaus.groovy</groupId>
         <artifactId>groovy-eclipse-compiler</artifactId>
-        <version>${groovy-eclipse-compiler.version}</version>
         <extensions>true</extensions>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>${surefire-plugin.version}</version>
       </plugin>
     </plugins>
 
