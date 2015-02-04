@@ -1,0 +1,528 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Index.html</title>
+
+
+    <script language="javascript" type="text/javascript">
+
+        function showHide (name) {
+          if(sessionStorage == null || typeof(sessionStorage)=='undefined'){
+            if (document.getElementById(name)) {
+              if (document.getElementById(name+'_show').style.display != 'none') {
+                  document.getElementById(name+'_show').style.display = 'none';
+                  document.getElementById(name).style.display = 'block';
+              } else {
+                  document.getElementById(name+'_show').style.display = 'inline';
+                  document.getElementById(name).style.display = 'none';
+              }
+            }
+          } else {
+            if(sessionStorage.getItem(name+'_display') != 'none'){
+               document.getElementById(name+'_show').style.display = 'inline';
+               document.getElementById(name).style.display = 'none';
+               sessionStorage.setItem(name + '_display','none');
+            } else {
+               document.getElementById(name+'_show').style.display = 'none';
+               document.getElementById(name).style.display = 'block';
+               sessionStorage.setItem(name + '_display','block');
+            }
+          }
+        }
+
+        function restoreVisibility(name){
+          if(!(sessionStorage == null || typeof(sessionStorage)=='undefined')){
+              if (document.getElementById(name)) {
+                  var v = sessionStorage.getItem(name + '_display')
+                  if(v!= null && v != 'none'){
+                    document.getElementById(name+'_show').style.display = 'none';
+                    document.getElementById(name).style.display = 'block';
+
+                  } else {
+                    document.getElementById(name+'_show').style.display = 'inline';
+                    document.getElementById(name).style.display = 'none';
+                    sessionStorage.setItem(name + '_display','none');
+                  }
+              }
+          }
+        }
+
+        function load(){
+                restoreVisibility("Introduction")
+            restoreVisibility("@_1_Arithmetics")
+            restoreVisibility("@_2_Issue Tracking")
+            restoreVisibility("@_3_Java Map specification")
+            restoreVisibility("@_4_Password strength")
+            restoreVisibility("@_5_Calendars")
+
+        }
+
+    </script>
+
+    
+<!--Load the AJAX GOOGLE GRAPH API -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChartStatistic);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChartStatistic() {
+
+        // ==================================================== Create the data table Test.
+        var dataTest = new google.visualization.DataTable();
+        dataTest.addColumn('string', 'Topping');
+        dataTest.addColumn('number', 'Slices');
+
+        dataTest.addRows([
+          ['Succes', 5],
+          ['Error', 2],
+          ['Not run', 1],
+        ]);
+
+        // ----------------- Set chart options Test
+        var optionsTest = {'title':'8 tests',
+                       'titleTextStyle': {fontSize:14,color:'DimGray'},
+                       'pieSliceText':'value',
+                       'pieSliceTextStyle':{fontSize:11},
+                       'slices': [{color: 'limeGreen'}, {color: 'Red'}, {color: 'lightGray'}],
+                       'pieHole': 0.4,
+                       'width':400,
+                       'height':300};
+
+        // =================================================== Create the data table Iteration.
+        var dataIteration = new google.visualization.DataTable();
+        dataIteration.addColumn('string', 'Topping');
+        dataIteration.addColumn('number', 'Slices');
+
+        dataIteration.addRows([
+          ['Succes', 43],
+          ['Error', 32],
+        ]);
+
+        // ----------------- Set chart options Iterations
+        var optionsIteration = {'title':'75 iterations',
+                       'titleTextStyle': {fontSize:14,color:'DimGray'},
+                       'pieSliceText':'value',
+                       'pieSliceTextStyle':{fontSize:11},
+                       'slices': [{color: 'limeGreen'}, {color: 'red'}],
+                       'pieHole': 0.4,
+                       'width':400,
+                       'height':300};
+
+
+        // ======================================Instantiate and draw our chart, passing in some options.
+        var chartTest = new google.visualization.PieChart(document.getElementById('chart_test_div'));
+        chartTest.draw(dataTest, optionsTest);
+        var chartIteration = new google.visualization.PieChart(document.getElementById('chart_iteration_div'));
+        chartIteration.draw(dataIteration, optionsIteration);
+      }
+    </script>
+    <!--END STATISTICS WITH GOOGLE GRAPH API-->
+
+
+
+
+    <style type="text/css">
+        /* This CSS is just for presentational purposes. */
+        body {
+            background-color: #FFF; }
+        h1 {
+            font-size: 200%; }
+
+        .anchor{
+          display: block;
+          height: 65px;
+          margin-top: -65px;
+          visibility: hidden;
+        }
+
+        table {
+          border-collapse:collapse;
+          box-shadow: 1px 1px 1px #999;
+          margin-left:0.5cm;
+        }
+
+        blockquote {
+          border-collapse:collapse;
+          border-collapse:collapse;
+          box-shadow: 1px 1px 1px #999;
+          border-left: 8px solid silver;
+          border-top : 1px solid silver;
+          padding:1px 12px;
+          background-color: #FAFAFA;
+          margin-left:0.5cm;
+          width : 80%
+        }
+
+        pre {
+          border-collapse:collapse;
+          //box-shadow: 1px 1px 1px #999;
+          border-collapse:collapse;
+          box-shadow: 0px 0px 0px #999;
+          border-left: 8px solid silver;
+          //border-top : 1px solid silver;
+          padding:12px 16px;
+          //background-color: #F8FFF8;
+          margin-left:0.5cm;
+          width : 80%
+        }
+
+        table td, table th{
+           padding:3px 6px;
+        }
+
+        caption {
+          text-align:left;
+          color:gray;
+          //font-weight:bold;
+          //font-size:small;
+          //font-style:italic
+        }
+
+        .resultCaption{
+          font-size:small;
+        }
+
+        .fixetop {
+          z-index: 2;
+          background-color: white;
+          position: fixed;
+          top: 0px;
+          left : 0px;
+          width: 100%;
+          padding-left:5px;
+          padding-top:5px;
+          padding-bottom:1px;
+
+        }
+
+        .testHeader {
+          padding-bottom : 6px;
+          border-bottom : 1px solid lightGray
+        }
+
+        .detailTestDiv{
+          z-index: 1;
+          position:absolute;
+          top:20px;
+          margin : 35px ;
+          margin : 35px ;
+        }
+
+        .detailTestDivNonExecuted{
+          border-top :1px solid Silver;
+          border-left:1px solid Silver;
+          padding-left:0.5cm;
+
+        }
+
+        .detailTestDivNonExecuted p {
+          white-space : pre;
+          font-family: "Courier New";
+        }
+
+        .includeTestDiv{
+          padding-left:0.5cm;
+          border-left:1px solid orange;
+          border-top:1px solid orange;
+          padding-bottom: 0.3cm;
+        }
+
+        .summaryTestDiv{
+          padding-left:0.5cm;
+          padding-top:0.2cm;
+          padding-bottom :0.3cm;
+          border-bottom:1px solid lightGray;
+          width: 100%;
+        }
+
+        .includeFixeDiv{
+          padding-left:0.5cm;
+          border-left:1px solid orange;
+          border-top:1px solid orange;
+          padding-bottom: 0.3cm;
+        }
+
+        .resultCell{
+          padding:5px 15px;
+          color:black;
+        }
+
+        .resultHeader{
+          background-color:gray;
+          color:white;
+          padding:5px 15px;
+        }
+
+        .tableHeader{
+          background-color:Gainsboro;
+        }
+
+        table,th, tr, td {
+          border: 1px solid gray;
+          color : DimGray;
+        }
+
+        .inlineDiv{
+          line-height: 140%;
+          border-left:1px solid gray;
+          margin-left:0.5cm;
+          padding-left:0.3cm;
+          padding-top :0.01cm;
+          padding-bottom: 0.1cm;
+
+        }
+
+        .inlineHeader{
+        }
+
+        .solidBorder{
+           border: 1px solid;
+        }
+
+        .partialBorder{
+          border-top: 1px solid;
+          border-left: 1px solid;
+        }
+
+        .inlineOK{
+          background-color:white;
+          border-color:green;
+          color:green;
+          font-weight:bold;
+        }
+
+        .inlineNeutral{
+          background-color:white;
+          border-color:gray;
+          color:gray;
+          font-weight:bold;
+        }
+
+        .inlineMultiLinesOK{
+          background-color:white;
+          border-color:green;
+          color:green;
+          font-weight:bold;
+          display: inline-block;
+        }
+
+        .inlineError{
+          background-color:white;
+          border-color:red;
+          color:red;
+          font-weight:bold;
+        }
+
+        .inlineErrorMultiLines{
+          background-color:white;
+          border-color:red;
+          color:red;
+          font-weight:bold;
+        }
+
+        .inlineReturnedValue{
+          background-color:white;
+          border-color:blue;
+          color:blue;
+          font-weight:bold;
+        }
+
+        .inlineValue{
+          background-color:white;
+          border-color:gray;
+          color:black;
+          font-weight:bold;
+        }
+
+        .inLineMultiLines{
+          white-space : pre;
+          font-family: "Courier New";
+          font-size:95%;
+          line-height: 110%;
+          background-color:white;
+          font-weight:bold;
+          padding-left:0.3cm;
+          padding-right:0.2cm;
+          padding-top:0.2cm;
+          padding-bottom:0.2cm;
+        }
+
+        .floatDiv{
+          float:left;
+        }
+
+        .listTestGlobal {
+          border-collapse:collapse;
+          box-shadow: none;
+          font-weight:bold;
+          margin-left:0.5cm;
+          width:90%
+        }
+
+        .listTest {
+          border-collapse:collapse;
+          box-shadow: none;
+          font-weight:bold;
+          margin-left:0.5cm;
+        }
+
+        .TestSummary {
+          border-collapse:collapse;
+          box-shadow: none;
+          border-style: hidden;
+          margin-left:0cm;
+        }
+
+        .TestSummary th, .TestSummary tr, .TestSummary td {
+           border-style: hidden;
+           padding:3px 20px;
+
+        }
+
+        .listTest th, .listTest tr, .listTest td {
+           border-style: hidden;
+           padding:3px 20px;
+           /*border-top : 1px solid black ;
+           border-bottom : 1px solid gray ;*/
+        }
+
+        .listTestGlobal th, .listTestGlobal tr, .listTestGlobal td {
+           border-style: hidden;
+        }
+
+        a:link {text-decoration:none;}    /* unvisited link */
+
+        a:hover {
+          text-decoration: underline;
+          }
+
+        /* This CSS is used for the Show/Hide functionality. */
+        .more {
+            display: none;
+            border-top: 1px solid #666;
+            border-bottom: 1px solid #666; }
+
+        .noneDisplay {
+            display:none;}
+
+        .divType1 {
+            border-top: 1px solid #666;
+            border-bottom: 1px solid #666;
+        }
+
+        a.showSummaryLink, a.hideSummaryLink {
+            text-decoration: none;
+            color: gray;
+            font-weight:bold;
+        }
+
+        a.showLink, a.hideLink {
+            text-decoration: none;
+            color: orange;
+            font-weight:bold;
+        }
+
+        .includeFixeInclude{
+            text-decoration: none;
+            color: orange;
+            font-weight:bold;
+        }
+
+        a.showLink:hover, a.hideLink:hover {
+            text-decoration: none;
+            border-bottom: 1px dotted orange; }
+
+
+
+        a.showLinkDetail, a.hideLinkDetail {
+            text-decoration: none;
+            color: gray;
+        }
+
+        a.showLinkDetail:hover, a.hideLinkDetail:hover {
+            text-decoration: none;
+            color: gray;
+            border-bottom: 1px dotted gray; }
+
+        a.showSummaryLink, a.hideSummaryLink {
+            text-decoration: none;
+            color: gray;
+            font-weight:bold;
+        }
+
+        a.showSummaryLink:hover, a.hideSummaryLink:hover {
+            text-decoration: none;
+            color: gray;
+            border-bottom: 1px dotted gray; }
+
+        .tooltip {
+              border-bottom: 1px dotted #333;
+              position: relative;
+              cursor: pointer;
+        }
+
+         .tooltip:hover:after {
+              content: attr(title);
+              position: absolute;
+              white-space: nowrap;
+              background: rgba(0, 0, 0, 0.85);
+              padding: 3px 7px; color: #FFF;
+              border-radius: 3px;
+              -moz-border-radius: 3px;
+              -webkit-border-radius: 3px;
+              margin-left: 7px;
+              margin-top: -3px;
+          }
+
+
+    </style>
+</head>
+<body onload="load()">
+<div><div class = "floatDiv"><img src = "images/tmar-with-name-big.png" height="60"/></div><div><span style="margin-left:10px"><font size=6 color="gray">Tmar sample project</font><span><br>
+<span style="margin-left:10px"><font size=4 color="gray"> TMar Global execution report - 01/02/15 16:24:11</font><span><br></div></div><div style="height:10px"></div><HR>
+    <!--Div that will hold the test statistic graph-->
+    <div width:300px;height:300px;border:0px; ">
+    <table style = "height:300px; box-shadow:none;border:none;color:none;margin-left: 0cm;">
+    <tr style="text-align: center;vertical-align:middle;width:280px;height:300px;border:none">
+      <td style="border:none;min-width:300px;max-width:300px;">
+      <span style="font-size:120px;line-height:110px;color:red;">2</span><br>
+      <span style="color:red;">Tests in error</span><br/>
+
+      </td>
+      <td style = "border:none;color:none;">
+      <div id="chart_test_div" ></div>
+      </td>
+      <td style = "border:none;color:none;">
+      <div id="chart_iteration_div" ></div>
+      </td>
+    </tr>
+    </table>
+    </div>
+    <HR>
+    <!--End Div that held the test statistic graph-->
+    <div style="height:10px"></div><span style="margin-left:15px;"><span style="font-size: 120%;line-height:25px;color:gray;"><span></span></span></span><BR><div style="margin-left:55px;margin-top:5px;"><a href="#" id="@_1_Arithmetics_show" class="showLinkDetail" onclick="showHide('@_1_Arithmetics');return false;"><span style="font-size: 120%;line-height:25px;color:gray;"><span>1 Arithmetics</span></span> ...</a>
+    <div id="@_1_Arithmetics" class="noneDisplay">
+    <a href="#" id="@_1_Arithmetics_hide" class="hideLinkDetail" onclick="showHide('@_1_Arithmetics');return false;"><span style="font-size: 120%;line-height:25px;color:gray;"><span>1 Arithmetics</span></span> ...</a>
+    <div>
+    </div><div style="border-top:2px solid;border-color:lightGray"><div style="margin-left:30px"><p>Arithmetic or arithmetics (from the Greek <em>???????</em> arithmos, &ldquo;number&rdquo;) is the oldest<br  />
+and most elementary branch of mathematics. It consists in the study of numbers,<br  />
+especially the properties of the traditional operations between them ? <strong>addition</strong>,<br  />
+<strong>subtraction</strong>, <strong>multiplication</strong> and <strong>division</strong>.<br  /></p>
+<p>Arithmetic is an elementary part of number theory, and number theory is considered<br  />
+to be one of the top-level divisions of <em>modern mathematics</em>, along with algebra,<br  />
+geometry, and analysis.<br  /></p>
+<p>The terms arithmetic and higher arithmetic were used until the beginning of the 20th<br  />
+century as synonyms for number theory and are, sometimes, still used to refer to a<br  />
+wider part of number theory<br  /></p>
+<p><a href="http://en.wikipedia.org/wiki/Arithmetic/">(source wikipedia)</a></p>
+</div></div></div></div><span style="padding-left:95px;vertical-align: middle;" title = " CalculatorTest.addition.tmar "><img style="vertical-align:middle;" src="ok.png" width="20" height="20"><a style="line-height:25px;padding-left:10px;font-size: 120%;" href="CalculatorTest.addition.html">Addition test</a></span><BR><span style="padding-left:95px;vertical-align: middle;" title = " CalculatorTest.multiplication.tmar "><img style="vertical-align:middle;" src="ok.png" width="20" height="20"><a style="line-height:25px;padding-left:10px;font-size: 120%;" href="CalculatorTest.multiplication.html">Multiplication test</a></span><BR><span style="padding-left:95px;vertical-align: middle;" title = " Division.test.tmar "><img style="vertical-align:middle;" src="ok.png" width="20" height="20"><a style="line-height:25px;padding-left:10px;font-size: 120%;" href="Division.test.html">Division</a></span><BR><span style="margin-left:55px;"><span style="font-size: 120%;line-height:25px;color:gray;"><span>2 Issue Tracking</span></span></span><BR><span style="padding-left:95px;vertical-align: middle;" title = " IssueWorkflowTest.test.tmar, 15 errors "><img style="vertical-align:middle;" src="error.png" width="20" height="20"><a style="line-height:25px;padding-left:10px;font-size: 120%;" href="IssueWorkflowTest.test.html">Issue lifecycle</a></span><BR><span style="margin-left:55px;"><span style="font-size: 120%;line-height:25px;color:gray;"><span>3 Java Map specification</span></span></span><BR><span style="padding-left:95px;vertical-align: middle;" title = " HashMapTest.getTest.tmar "><img style="vertical-align:middle;" src="ok.png" width="20" height="20"><a style="line-height:25px;padding-left:10px;font-size: 120%;" href="HashMapTest.getTest.html">Algorithm for map - get</a></span><BR><span style="padding-left:95px;vertical-align: middle;" title = " HashMapTest.putTest.tmar "><img style="vertical-align:middle;" src="notRun.png" width="20" height="20"><a style="line-height:25px;padding-left:10px;font-size: 120%;" href="HashMapTest.putTest.html">Algorithm for map - put</a></span><BR><span style="margin-left:55px;"><span style="font-size: 120%;line-height:25px;color:gray;"><span>4 Password strength</span></span></span><BR><span style="padding-left:95px;vertical-align: middle;" title = " PasswordTest.test.tmar, 17 errors "><img style="vertical-align:middle;" src="error.png" width="20" height="20"><a style="line-height:25px;padding-left:10px;font-size: 120%;" href="PasswordTest.test.html">Password strength checker</a></span><BR><span style="margin-left:55px;"><span style="font-size: 120%;line-height:25px;color:gray;"><span>5 Calendars</span></span></span><BR><span style="padding-left:95px;vertical-align: middle;" title = " Weeks.test.tmar "><img style="vertical-align:middle;" src="ok.png" width="20" height="20"><a style="line-height:25px;padding-left:10px;font-size: 120%;" href="Weeks.test.html">Weeks</a></span><BR></body>
+</html>

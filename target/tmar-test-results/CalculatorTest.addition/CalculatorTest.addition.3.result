@@ -1,0 +1,30 @@
+{
+    "name": "CalculatorTest.addition",
+    "className": "CalculatorTest",
+    "report": {
+        "iteration": 3,
+        "executionDate": "2015-02-01T15:24:10+0000",
+        "columns": {
+            "op1": {
+                "value": 12,
+                "isResult": false,
+                "isReturnedValue": false
+            },
+            "op2": {
+                "value": 17,
+                "isResult": false,
+                "isReturnedValue": false
+            },
+            "results": {
+                "value": 29,
+                "isResult": true,
+                "isReturnedValue": false,
+                "error": false,
+                "operation": "=",
+                "expectedValue": "29",
+                "reverseEval": false
+            }
+        },
+        "nbrError": 0
+    }
+}

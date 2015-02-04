@@ -1,0 +1,107 @@
+{
+    "name": "Weeks.test",
+    "testName": "Weeks",
+    "className": "Weeks",
+    "contextName": "Weeks",
+    "infoTmar": "2014-06-03",
+    "report": {
+        "iteration": 0,
+        "executionDate": "2015-02-01T15:24:10+0000",
+        "paragraphs": {
+            "1": {
+                "type": "TEXT",
+                "text": "\nFirst day of week is **Sunday** :\n"
+            },
+            "2": {
+                "type": "MAP",
+                "name": "days"
+            },
+            "3": {
+                "type": "MAP",
+                "name": "days",
+                "nbrLines": 7,
+                "isInline": false,
+                "columns": [
+                    "index",
+                    "name"
+                ],
+                "columnsCC": [
+                    "index",
+                    "name"
+                ],
+                "textPosition": [
+                    1,
+                    0
+                ],
+                "lines": {
+                    "0": [
+                        1,
+                        "Sunday"
+                    ],
+                    "1": [
+                        2,
+                        "Monday"
+                    ],
+                    "2": [
+                        3,
+                        "Tuesday"
+                    ],
+                    "3": [
+                        4,
+                        "Wednesday"
+                    ],
+                    "4": [
+                        5,
+                        "Thursday"
+                    ],
+                    "5": [
+                        6,
+                        "Friday"
+                    ],
+                    "6": [
+                        7,
+                        "Saturday"
+                    ]
+                }
+            },
+            "4": {
+                "type": "TEXT",
+                "text": "\nThe minimal days for week one is **one day**\n\n"
+            },
+            "5": {
+                "type": "EACH",
+                "name": "each"
+            },
+            "6": {
+                "type": "EACH",
+                "name": "each",
+                "nbrLines": 16,
+                "isInline": false,
+                "columns": [
+                    "date",
+                    "week ",
+                    "day of week "
+                ],
+                "columnsCC": [
+                    "date",
+                    "week",
+                    "dayOfWeek"
+                ],
+                "textPosition": [
+                    0,
+                    1,
+                    1
+                ],
+                "iterations": {
+                    "begin": 1,
+                    "end": 16
+                }
+            },
+            "7": {
+                "type": "TEXT",
+                "text": "\n_NB:\n* First day of week is **Sunday**\n* Minimal days for week one is **one day**\n"
+            }
+        },
+        "nbrIterations": 16
+    }
+}

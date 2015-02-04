@@ -1,0 +1,34 @@
+{
+    "name": "Weeks.test",
+    "className": "Weeks",
+    "report": {
+        "iteration": 15,
+        "executionDate": "2015-02-01T15:24:10+0000",
+        "columns": {
+            "date": {
+                "value": "2016/02/22",
+                "isResult": false,
+                "isReturnedValue": false
+            },
+            "week": {
+                "value": 9,
+                "isResult": true,
+                "isReturnedValue": false,
+                "error": false,
+                "operation": "=",
+                "expectedValue": "9",
+                "reverseEval": false
+            },
+            "dayOfWeek": {
+                "value": "Monday",
+                "isResult": true,
+                "isReturnedValue": false,
+                "error": false,
+                "operation": "=",
+                "expectedValue": "Monday",
+                "reverseEval": false
+            }
+        },
+        "nbrError": 0
+    }
+}

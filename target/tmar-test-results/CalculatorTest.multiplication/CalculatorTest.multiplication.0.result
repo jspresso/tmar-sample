@@ -1,0 +1,105 @@
+{
+    "name": "CalculatorTest.multiplication",
+    "testName": "Multiplication test",
+    "className": "CalculatorTest",
+    "contextName": "CalculatorTest",
+    "infoTmar": "2014-06-03",
+    "report": {
+        "iteration": 0,
+        "executionDate": "2015-02-01T15:24:10+0000",
+        "paragraphs": {
+            "1": {
+                "type": "TEXT",
+                "text": "\n(Please read #document unlucky arithmetic.pdf, Disclaimer;)\n\nThe multiplication of two whole numbers is equivalent to the addition of one of them with itself as many times as the value of the other one; \n\nfor example, 3 multiplied by 4 (often said as \"3 times 4\") can be calculated by adding 4 copies of 3 together:\n    3 x 4 = 3 + 3 + 3 + 3 = 12\n\nFour bags of three marbles gives twelve marbles (4 x 3 = 12) :\n#image multiplication.png;\n\nSee more details at #url WIKIPEDIA/Multiplication, Wikipedia;\n\nHere are some other examples :\n\n"
+            },
+            "2": {
+                "type": "EACH",
+                "name": "each"
+            },
+            "3": {
+                "type": "EACH",
+                "name": "each",
+                "nbrLines": 6,
+                "isInline": false,
+                "columns": [
+                    "op1",
+                    "op2",
+                    "results "
+                ],
+                "columnsCC": [
+                    "op1",
+                    "op2",
+                    "results"
+                ],
+                "textPosition": [
+                    1,
+                    1,
+                    1
+                ],
+                "iterations": {
+                    "begin": 1,
+                    "end": 6
+                }
+            },
+            "4": {
+                "type": "TEXT",
+                "text": "\nand others\n"
+            },
+            "5": {
+                "type": "EACH",
+                "name": "each",
+                "nbrLines": 1,
+                "isInline": true,
+                "inlineDescription": "{@op1@} x {@op2@} = {@results@}\n",
+                "isSimpleForm": true,
+                "columns": [
+                    "op1",
+                    "op2",
+                    "results  "
+                ],
+                "columnsCC": [
+                    "op1",
+                    "op2",
+                    "results"
+                ],
+                "textPosition": [
+                    1,
+                    1,
+                    1
+                ],
+                "iterations": {
+                    "begin": 7,
+                    "end": 7
+                }
+            },
+            "6": {
+                "type": "EACH",
+                "name": "each",
+                "nbrLines": 1,
+                "isInline": true,
+                "inlineDescription": "the number {@op1@} multiply by {@op2@} gives {@results@}\n",
+                "isSimpleForm": true,
+                "columns": [
+                    "op1",
+                    "op2",
+                    "results   "
+                ],
+                "columnsCC": [
+                    "op1",
+                    "op2",
+                    "results"
+                ],
+                "textPosition": [
+                    1,
+                    1,
+                    1
+                ],
+                "iterations": {
+                    "begin": 8,
+                    "end": 8
+                }
+            }
+        },
+        "nbrIterations": 8
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "name": "HashMapTest.getTest",
+    "className": "HashMapTest",
+    "report": {
+        "iteration": 2,
+        "executionDate": "2015-02-01T15:24:09+0000",
+        "columns": {
+            "key": {
+                "value": "B",
+                "isResult": false,
+                "isReturnedValue": false
+            },
+            "expectedValue": {
+                "value": 20,
+                "isResult": true,
+                "isReturnedValue": false,
+                "error": false,
+                "operation": "=",
+                "expectedValue": "20",
+                "reverseEval": false
+            },
+            "note": {
+                "value": "This value exists",
+                "isResult": false,
+                "isReturnedValue": false
+            }
+        },
+        "nbrError": 0
+    }
+}

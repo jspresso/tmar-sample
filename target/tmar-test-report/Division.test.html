@@ -1,0 +1,551 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Division.test.html</title>
+
+
+    <script language="javascript" type="text/javascript">
+
+        function showHide (name) {
+          if(sessionStorage == null || typeof(sessionStorage)=='undefined'){
+            if (document.getElementById(name)) {
+              if (document.getElementById(name+'_show').style.display != 'none') {
+                  document.getElementById(name+'_show').style.display = 'none';
+                  document.getElementById(name).style.display = 'block';
+              } else {
+                  document.getElementById(name+'_show').style.display = 'inline';
+                  document.getElementById(name).style.display = 'none';
+              }
+            }
+          } else {
+            if(sessionStorage.getItem(name+'_display') != 'none'){
+               document.getElementById(name+'_show').style.display = 'inline';
+               document.getElementById(name).style.display = 'none';
+               sessionStorage.setItem(name + '_display','none');
+            } else {
+               document.getElementById(name+'_show').style.display = 'none';
+               document.getElementById(name).style.display = 'block';
+               sessionStorage.setItem(name + '_display','block');
+            }
+          }
+        }
+
+        function restoreVisibility(name){
+          if(!(sessionStorage == null || typeof(sessionStorage)=='undefined')){
+              if (document.getElementById(name)) {
+                  var v = sessionStorage.getItem(name + '_display')
+                  if(v!= null && v != 'none'){
+                    document.getElementById(name+'_show').style.display = 'none';
+                    document.getElementById(name).style.display = 'block';
+
+                  } else {
+                    document.getElementById(name+'_show').style.display = 'inline';
+                    document.getElementById(name).style.display = 'none';
+                    sessionStorage.setItem(name + '_display','none');
+                  }
+              }
+          }
+        }
+
+        function load(){
+    
+        }
+
+    </script>
+
+    
+<!--Load the AJAX GOOGLE GRAPH API -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChartStatistic);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChartStatistic() {
+
+        // ==================================================== Create the data table Test.
+        var dataTest = new google.visualization.DataTable();
+        dataTest.addColumn('string', 'Topping');
+        dataTest.addColumn('number', 'Slices');
+
+        dataTest.addRows([
+          ['Succes', 3],
+          ['Error', 0],
+          ['Not run', 0],
+        ]);
+
+        // ----------------- Set chart options Test
+        var optionsTest = {'title':'3 tests',
+                       'titleTextStyle': {fontSize:14,color:'DimGray'},
+                       'pieSliceText':'value',
+                       'pieSliceTextStyle':{fontSize:11},
+                       'slices': [{color: 'limeGreen'}, {color: 'Red'}, {color: 'lightGray'}],
+                       'pieHole': 0.4,
+                       'width':400,
+                       'height':300};
+
+        // =================================================== Create the data table Iteration.
+        var dataIteration = new google.visualization.DataTable();
+        dataIteration.addColumn('string', 'Topping');
+        dataIteration.addColumn('number', 'Slices');
+
+        dataIteration.addRows([
+          ['Succes', 24],
+          ['Error', 0],
+        ]);
+
+        // ----------------- Set chart options Iterations
+        var optionsIteration = {'title':'24 iterations',
+                       'titleTextStyle': {fontSize:14,color:'DimGray'},
+                       'pieSliceText':'value',
+                       'pieSliceTextStyle':{fontSize:11},
+                       'slices': [{color: 'limeGreen'}, {color: 'red'}],
+                       'pieHole': 0.4,
+                       'width':400,
+                       'height':300};
+
+
+        // ======================================Instantiate and draw our chart, passing in some options.
+        var chartTest = new google.visualization.PieChart(document.getElementById('chart_test_div'));
+        chartTest.draw(dataTest, optionsTest);
+        var chartIteration = new google.visualization.PieChart(document.getElementById('chart_iteration_div'));
+        chartIteration.draw(dataIteration, optionsIteration);
+      }
+    </script>
+    <!--END STATISTICS WITH GOOGLE GRAPH API-->
+
+
+
+
+    <style type="text/css">
+        /* This CSS is just for presentational purposes. */
+        body {
+            background-color: #FFF; }
+        h1 {
+            font-size: 200%; }
+
+        .anchor{
+          display: block;
+          height: 65px;
+          margin-top: -65px;
+          visibility: hidden;
+        }
+
+        table {
+          border-collapse:collapse;
+          box-shadow: 1px 1px 1px #999;
+          margin-left:0.5cm;
+        }
+
+        blockquote {
+          border-collapse:collapse;
+          border-collapse:collapse;
+          box-shadow: 1px 1px 1px #999;
+          border-left: 8px solid silver;
+          border-top : 1px solid silver;
+          padding:1px 12px;
+          background-color: #FAFAFA;
+          margin-left:0.5cm;
+          width : 80%
+        }
+
+        pre {
+          border-collapse:collapse;
+          //box-shadow: 1px 1px 1px #999;
+          border-collapse:collapse;
+          box-shadow: 0px 0px 0px #999;
+          border-left: 8px solid silver;
+          //border-top : 1px solid silver;
+          padding:12px 16px;
+          //background-color: #F8FFF8;
+          margin-left:0.5cm;
+          width : 80%
+        }
+
+        table td, table th{
+           padding:3px 6px;
+        }
+
+        caption {
+          text-align:left;
+          color:gray;
+          //font-weight:bold;
+          //font-size:small;
+          //font-style:italic
+        }
+
+        .resultCaption{
+          font-size:small;
+        }
+
+        .fixetop {
+          z-index: 2;
+          background-color: white;
+          position: fixed;
+          top: 0px;
+          left : 0px;
+          width: 100%;
+          padding-left:5px;
+          padding-top:5px;
+          padding-bottom:1px;
+
+        }
+
+        .testHeader {
+          padding-bottom : 6px;
+          border-bottom : 1px solid lightGray
+        }
+
+        .detailTestDiv{
+          z-index: 1;
+          position:absolute;
+          top:20px;
+          margin : 35px ;
+          margin : 35px ;
+        }
+
+        .detailTestDivNonExecuted{
+          border-top :1px solid Silver;
+          border-left:1px solid Silver;
+          padding-left:0.5cm;
+
+        }
+
+        .detailTestDivNonExecuted p {
+          white-space : pre;
+          font-family: "Courier New";
+        }
+
+        .includeTestDiv{
+          padding-left:0.5cm;
+          border-left:1px solid orange;
+          border-top:1px solid orange;
+          padding-bottom: 0.3cm;
+        }
+
+        .summaryTestDiv{
+          padding-left:0.5cm;
+          padding-top:0.2cm;
+          padding-bottom :0.3cm;
+          border-bottom:1px solid lightGray;
+          width: 100%;
+        }
+
+        .includeFixeDiv{
+          padding-left:0.5cm;
+          border-left:1px solid orange;
+          border-top:1px solid orange;
+          padding-bottom: 0.3cm;
+        }
+
+        .resultCell{
+          padding:5px 15px;
+          color:black;
+        }
+
+        .resultHeader{
+          background-color:gray;
+          color:white;
+          padding:5px 15px;
+        }
+
+        .tableHeader{
+          background-color:Gainsboro;
+        }
+
+        table,th, tr, td {
+          border: 1px solid gray;
+          color : DimGray;
+        }
+
+        .inlineDiv{
+          line-height: 140%;
+          border-left:1px solid gray;
+          margin-left:0.5cm;
+          padding-left:0.3cm;
+          padding-top :0.01cm;
+          padding-bottom: 0.1cm;
+
+        }
+
+        .inlineHeader{
+        }
+
+        .solidBorder{
+           border: 1px solid;
+        }
+
+        .partialBorder{
+          border-top: 1px solid;
+          border-left: 1px solid;
+        }
+
+        .inlineOK{
+          background-color:white;
+          border-color:green;
+          color:green;
+          font-weight:bold;
+        }
+
+        .inlineNeutral{
+          background-color:white;
+          border-color:gray;
+          color:gray;
+          font-weight:bold;
+        }
+
+        .inlineMultiLinesOK{
+          background-color:white;
+          border-color:green;
+          color:green;
+          font-weight:bold;
+          display: inline-block;
+        }
+
+        .inlineError{
+          background-color:white;
+          border-color:red;
+          color:red;
+          font-weight:bold;
+        }
+
+        .inlineErrorMultiLines{
+          background-color:white;
+          border-color:red;
+          color:red;
+          font-weight:bold;
+        }
+
+        .inlineReturnedValue{
+          background-color:white;
+          border-color:blue;
+          color:blue;
+          font-weight:bold;
+        }
+
+        .inlineValue{
+          background-color:white;
+          border-color:gray;
+          color:black;
+          font-weight:bold;
+        }
+
+        .inLineMultiLines{
+          white-space : pre;
+          font-family: "Courier New";
+          font-size:95%;
+          line-height: 110%;
+          background-color:white;
+          font-weight:bold;
+          padding-left:0.3cm;
+          padding-right:0.2cm;
+          padding-top:0.2cm;
+          padding-bottom:0.2cm;
+        }
+
+        .floatDiv{
+          float:left;
+        }
+
+        .listTestGlobal {
+          border-collapse:collapse;
+          box-shadow: none;
+          font-weight:bold;
+          margin-left:0.5cm;
+          width:90%
+        }
+
+        .listTest {
+          border-collapse:collapse;
+          box-shadow: none;
+          font-weight:bold;
+          margin-left:0.5cm;
+        }
+
+        .TestSummary {
+          border-collapse:collapse;
+          box-shadow: none;
+          border-style: hidden;
+          margin-left:0cm;
+        }
+
+        .TestSummary th, .TestSummary tr, .TestSummary td {
+           border-style: hidden;
+           padding:3px 20px;
+
+        }
+
+        .listTest th, .listTest tr, .listTest td {
+           border-style: hidden;
+           padding:3px 20px;
+           /*border-top : 1px solid black ;
+           border-bottom : 1px solid gray ;*/
+        }
+
+        .listTestGlobal th, .listTestGlobal tr, .listTestGlobal td {
+           border-style: hidden;
+        }
+
+        a:link {text-decoration:none;}    /* unvisited link */
+
+        a:hover {
+          text-decoration: underline;
+          }
+
+        /* This CSS is used for the Show/Hide functionality. */
+        .more {
+            display: none;
+            border-top: 1px solid #666;
+            border-bottom: 1px solid #666; }
+
+        .noneDisplay {
+            display:none;}
+
+        .divType1 {
+            border-top: 1px solid #666;
+            border-bottom: 1px solid #666;
+        }
+
+        a.showSummaryLink, a.hideSummaryLink {
+            text-decoration: none;
+            color: gray;
+            font-weight:bold;
+        }
+
+        a.showLink, a.hideLink {
+            text-decoration: none;
+            color: orange;
+            font-weight:bold;
+        }
+
+        .includeFixeInclude{
+            text-decoration: none;
+            color: orange;
+            font-weight:bold;
+        }
+
+        a.showLink:hover, a.hideLink:hover {
+            text-decoration: none;
+            border-bottom: 1px dotted orange; }
+
+
+
+        a.showLinkDetail, a.hideLinkDetail {
+            text-decoration: none;
+            color: gray;
+        }
+
+        a.showLinkDetail:hover, a.hideLinkDetail:hover {
+            text-decoration: none;
+            color: gray;
+            border-bottom: 1px dotted gray; }
+
+        a.showSummaryLink, a.hideSummaryLink {
+            text-decoration: none;
+            color: gray;
+            font-weight:bold;
+        }
+
+        a.showSummaryLink:hover, a.hideSummaryLink:hover {
+            text-decoration: none;
+            color: gray;
+            border-bottom: 1px dotted gray; }
+
+        .tooltip {
+              border-bottom: 1px dotted #333;
+              position: relative;
+              cursor: pointer;
+        }
+
+         .tooltip:hover:after {
+              content: attr(title);
+              position: absolute;
+              white-space: nowrap;
+              background: rgba(0, 0, 0, 0.85);
+              padding: 3px 7px; color: #FFF;
+              border-radius: 3px;
+              -moz-border-radius: 3px;
+              -webkit-border-radius: 3px;
+              margin-left: 7px;
+              margin-top: -3px;
+          }
+
+
+    </style>
+</head>
+<body onload="load()">
+<div id= "subpage-header" class = "fixetop">
+<div id="Division.test-header" class = "testHeader">
+<table class = "TestSummary">
+<tr>
+<td style="background-color: green;">
+</td>
+<td>
+<NOBR><font size="4"><b> <font color="green">OK</font> - Division</b></font></NOBR><br><NOBR>11 iteration(s) with 0 in error - 01/02/15 16:24:10 - Division.test</NOBR><br>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="Division.test" class="detailTestDiv">
+<p></p>    <p></p><table class="tableResult">
+    <caption class="caption resultCaption">EACH</caption>    <tr>
+         <th class="resultHeader">dividend</th>
+         <th class="resultHeader">denominator</th>
+         <th class="resultHeader">quotient </th>
+    </tr>
+         <th class = "resultCell" style="text-align:center;">30</th>
+         <th class = "resultCell" style="text-align:center;">3</th>
+         <th class = "resultCell" style="text-align:left;" ><font color="green">10</font></th>
+    </tr>
+         <th class = "resultCell" style="text-align:center;">27</th>
+         <th class = "resultCell" style="text-align:center;">3</th>
+         <th class = "resultCell" style="text-align:left;" ><font color="green">9</font></th>
+    </tr>
+         <th class = "resultCell" style="text-align:center;">24</th>
+         <th class = "resultCell" style="text-align:center;">3</th>
+         <th class = "resultCell" style="text-align:left;" ><font color="green">8</font></th>
+    </tr>
+         <th class = "resultCell" style="text-align:center;">21</th>
+         <th class = "resultCell" style="text-align:center;">3</th>
+         <th class = "resultCell" style="text-align:left;" ><font color="green">7</font></th>
+    </tr>
+         <th class = "resultCell" style="text-align:center;">18</th>
+         <th class = "resultCell" style="text-align:center;">3</th>
+         <th class = "resultCell" style="text-align:left;" ><font color="green">6</font></th>
+    </tr>
+         <th class = "resultCell" style="text-align:center;">15</th>
+         <th class = "resultCell" style="text-align:center;">3</th>
+         <th class = "resultCell" style="text-align:left;" ><font color="green">5</font></th>
+    </tr>
+         <th class = "resultCell" style="text-align:center;">12</th>
+         <th class = "resultCell" style="text-align:center;">3</th>
+         <th class = "resultCell" style="text-align:left;" ><font color="green">4</font></th>
+    </tr>
+         <th class = "resultCell" style="text-align:center;">9</th>
+         <th class = "resultCell" style="text-align:center;">3</th>
+         <th class = "resultCell" style="text-align:left;" ><font color="green">3</font></th>
+    </tr>
+         <th class = "resultCell" style="text-align:center;">6</th>
+         <th class = "resultCell" style="text-align:center;">3</th>
+         <th class = "resultCell" style="text-align:left;" ><font color="green">2</font></th>
+    </tr>
+         <th class = "resultCell" style="text-align:center;">3</th>
+         <th class = "resultCell" style="text-align:center;">3</th>
+         <th class = "resultCell" style="text-align:left;" ><font color="green">1</font></th>
+    </tr>
+         <th class = "resultCell" style="text-align:center;">0</th>
+         <th class = "resultCell" style="text-align:center;">3</th>
+         <th class = "resultCell" style="text-align:left;" ><font color="green">0</font></th>
+    </tr>
+    </table><p></p>
+<p></p>
+</div></div></body>
+</html>

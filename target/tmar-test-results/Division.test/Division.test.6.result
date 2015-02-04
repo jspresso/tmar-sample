@@ -1,0 +1,30 @@
+{
+    "name": "Division.test",
+    "className": "Division",
+    "report": {
+        "iteration": 6,
+        "executionDate": "2015-02-01T15:24:10+0000",
+        "columns": {
+            "dividend": {
+                "value": 15,
+                "isResult": false,
+                "isReturnedValue": false
+            },
+            "denominator": {
+                "value": 3,
+                "isResult": false,
+                "isReturnedValue": false
+            },
+            "quotient": {
+                "value": 5,
+                "isResult": true,
+                "isReturnedValue": false,
+                "error": false,
+                "operation": "=",
+                "expectedValue": "5",
+                "reverseEval": false
+            }
+        },
+        "nbrError": 0
+    }
+}

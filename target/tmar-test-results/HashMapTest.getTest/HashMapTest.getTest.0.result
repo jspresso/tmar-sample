@@ -1,0 +1,103 @@
+{
+    "name": "HashMapTest.getTest",
+    "testName": "Algorithm for map - get",
+    "className": "HashMapTest",
+    "contextName": "HashMapTest",
+    "infoTmar": "2014-06-03",
+    "report": {
+        "iteration": 0,
+        "executionDate": "2015-02-01T15:24:09+0000",
+        "paragraphs": {
+            "1": {
+                "type": "TEXT",
+                "text": "\nA map should be an object that maps keys to values. \n"
+            },
+            "2": {
+                "type": "IMAGE",
+                "fileName": "map-image.jpg"
+            },
+            "3": {
+                "type": "TEXT",
+                "text": " \nLet's consider this map :\n"
+            },
+            "4": {
+                "type": "TABLE",
+                "name": "sample 1"
+            },
+            "5": {
+                "type": "TABLE",
+                "name": "sample 1",
+                "nbrLines": 4,
+                "isInline": false,
+                "columns": [
+                    "key",
+                    "value"
+                ],
+                "columnsCC": [
+                    "key",
+                    "value"
+                ],
+                "textPosition": [
+                    1,
+                    1
+                ],
+                "lines": {
+                    "0": [
+                        "A",
+                        10
+                    ],
+                    "1": [
+                        "B",
+                        20
+                    ],
+                    "2": [
+                        "C",
+                        30
+                    ],
+                    "3": [
+                        "D",
+                        30
+                    ]
+                }
+            },
+            "6": {
+                "type": "TEXT",
+                "text": " \n  This operation returns the value to which the specified key is mapped, \n  or null if this map contains no mapping for the key. \n\n  Here are few examples; for each line bellow let's \"get\" the value for the sample\n  map above, and check the expected value :\n"
+            },
+            "7": {
+                "type": "EACH",
+                "name": "each"
+            },
+            "8": {
+                "type": "EACH",
+                "name": "each",
+                "nbrLines": 3,
+                "isInline": false,
+                "columns": [
+                    "key",
+                    "expected value ",
+                    "Note"
+                ],
+                "columnsCC": [
+                    "key",
+                    "expectedValue",
+                    "note"
+                ],
+                "textPosition": [
+                    1,
+                    1,
+                    2
+                ],
+                "iterations": {
+                    "begin": 1,
+                    "end": 3
+                }
+            },
+            "9": {
+                "type": "TEXT",
+                "text": "  \n   For more details about \"null\" value, see the put operation test case.\n"
+            }
+        },
+        "nbrIterations": 3
+    }
+}
