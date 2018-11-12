@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jspresso.tmar.sample</groupId>
   <artifactId>sample</artifactId>
@@ -18,7 +18,7 @@
   </repositories>
 
   <properties>
-    <tmar.version>1.6-SNAPSHOT</tmar.version>
+    <tmar.version>1.9</tmar.version>
     <groovy-eclipse-batch.version>2.0.7-03</groovy-eclipse-batch.version>
     <groovy-eclipse-compiler.version>2.7.0-01</groovy-eclipse-compiler.version>
     <groovy.version>2.0.7</groovy.version>
@@ -40,6 +40,13 @@
   </dependencyManagement>
 
   <dependencies>
+
+    <dependency>
+      <groupId>org.jspresso.contrib</groupId>
+      <artifactId>jspresso-tmar-parent</artifactId>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
 
     <dependency>
       <groupId>org.codehaus.groovy</groupId>
